@@ -39,77 +39,77 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     
-var imageIndices = [0, 1, 2];
-shuffle(imageIndices);
+// var imageIndices = [0, 1, 2];
+// shuffle(imageIndices);
 
-var currentIndex = 0; 
+// var currentIndex = 0; 
 
-document.getElementById('leftBtn').addEventListener('click', function () {
-    changeImage('left');
-});
+// document.getElementById('leftBtn').addEventListener('click', function () {
+//     changeImage('left');
+// });
 
-document.getElementById('rightBtn').addEventListener('click', function () {
-    changeImage('right');
-});
+// document.getElementById('rightBtn').addEventListener('click', function () {
+//     changeImage('right');
+// });
 
-function changeImage(direction) {
-    var totalImages = 3; 
+// function changeImage(direction) {
+//     var totalImages = 3; 
 
-    if (direction === 'left') {
-        currentIndex = (currentIndex - 1 + totalImages) % totalImages;
-    } else {
-        currentIndex = (currentIndex + 1) % totalImages;
-    }
-
-    
-    highlightButton(direction + 'Btn');
+//     if (direction === 'left') {
+//         currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+//     } else {
+//         currentIndex = (currentIndex + 1) % totalImages;
+//     }
 
     
-    var currentImg = document.querySelector('.main__desktop__slider__slier__block__currentimg img');
-    var newImg1 = document.querySelector('.main__desktop__slider__slier__block__firstimg img');
-    var newImg3 = document.querySelector('.main__desktop__slider__slier__block__thirdimg img');
-
-    currentImg.src = getImageSrc(currentIndex);
-    newImg1.src = getImageSrc((currentIndex + 1) % totalImages);
-    newImg3.src = getImageSrc((currentIndex + 2) % totalImages);
-}
-
-
-function getImageSrc(index) {
-    
-    if (index === 0) {
-        return "./svg/first_img.svg";
-    } else if (index === 1) {
-        return "./svg/second_img.svg";
-    } else {
-        return "./svg/third_img.svg";
-    }
-}
-
-function highlightButton(buttonId) {
-    
-    var buttons = document.querySelectorAll('.main__desktop__slider__slier__block__leftbtn, .main__desktop__slider__slier__block__rightbtn');
-    buttons.forEach(function (button) {
-        button.classList.remove('clicked');
-    });
+//     highlightButton(direction + 'Btn');
 
     
-    document.getElementById(buttonId).classList.add('clicked');
-}
+//     var currentImg = document.querySelector('.main__desktop__slider__slier__block__currentimg img');
+//     var newImg1 = document.querySelector('.main__desktop__slider__slier__block__firstimg img');
+//     var newImg3 = document.querySelector('.main__desktop__slider__slier__block__thirdimg img');
+
+//     currentImg.src = getImageSrc(currentIndex);
+//     newImg1.src = getImageSrc((currentIndex + 1) % totalImages);
+//     newImg3.src = getImageSrc((currentIndex + 2) % totalImages);
+// }
 
 
-function shuffle(array) {
-    var currentIndex = array.length, randomIndex;
+// function getImageSrc(index) {
+    
+//     if (index === 0) {
+//         return "./svg/first_img.svg";
+//     } else if (index === 1) {
+//         return "./svg/second_img.svg";
+//     } else {
+//         return "./svg/third_img.svg";
+//     }
+// }
 
-    while (currentIndex !== 0) {
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex--;
+// function highlightButton(buttonId) {
+    
+//     var buttons = document.querySelectorAll('.main__desktop__slider__slier__block__leftbtn, .main__desktop__slider__slier__block__rightbtn');
+//     buttons.forEach(function (button) {
+//         button.classList.remove('clicked');
+//     });
 
-        [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
-    }
-
-    return array;
-}
+    
+//     document.getElementById(buttonId).classList.add('clicked');
+// }
 
 
-});
+// function shuffle(array) {
+//     var currentIndex = array.length, randomIndex;
+
+//     while (currentIndex !== 0) {
+//         randomIndex = Math.floor(Math.random() * currentIndex);
+//         currentIndex--;
+
+//         [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+//     }
+
+//     return array;
+// }
+
+
+ });
